@@ -23,7 +23,12 @@ function App() {
     if (!data) return;
     setDownloading(true);
     try {
-      const response = await axios.post('http://localhost:8000/download-pdf', 
+      // const response = await axios.post('http://localhost:8000/download-pdf', 
+      //   { groups: data.groups },
+      //   { responseType: 'blob' }
+      // );
+
+      const response = await axios.post('/api/download-pdf', 
         { groups: data.groups },
         { responseType: 'blob' }
       );
