@@ -1,0 +1,49 @@
+/* Replace the old @tailwind directives with this single import */
+@import "tailwindcss";
+
+@layer base {
+  body {
+    background-color: white;
+    @apply antialiased text-slate-900;
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+  }
+}
+
+@layer components {
+  .glass-card {
+    background-color: white;
+    border: 1px solid theme('colors.slate.100');
+    border-radius: 2rem;
+    box-shadow: 0 2px 15px -3px rgba(0,0,0,0.07), 0 10px 20px -2px rgba(0,0,0,0.04);
+  }
+
+  .input-primary {
+    @apply w-full px-5 py-4 bg-slate-50 border border-transparent rounded-2xl 
+           focus:bg-white focus:border-slate-200 outline-none transition-all duration-200;
+  }
+}
+
+@layer utilities {
+  .animation-delay-2000 {
+    animation-delay: 2s;
+  }
+  .animation-delay-4000 {
+    animation-delay: 4s;
+  }
+  .bg-grid-pattern {
+    background-image: radial-gradient(#e2e8f0 1px, transparent 1px);
+    background-size: 30px 30px;
+  }
+  
+  .animate-blob {
+    animation: blob 7s infinite;
+  }
+}
+
+@keyframes blob {
+  0% { transform: translate(0px, 0px) scale(1); }
+  33% { transform: translate(30px, -50px) scale(1.1); }
+  66% { transform: translate(-20px, 20px) scale(0.9); }
+  100% { transform: translate(0px, 0px) scale(1); }
+}
