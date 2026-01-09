@@ -3,8 +3,8 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import Response
 import pandas as pd
 import io
-from .grouping import calculate_group_sizes, balance_groups, parse_group_config
-from .pdf_generator import generate_pdf
+from grouping import calculate_group_sizes, balance_groups, parse_group_config
+from pdf_generator import generate_pdf
 
 app = FastAPI()
 
